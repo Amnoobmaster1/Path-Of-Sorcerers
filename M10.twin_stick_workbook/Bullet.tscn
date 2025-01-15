@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcsain3e5xt64"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_toptq"]
+[ext_resource type="Texture2D" uid="uid://bgn8fvhkjniwn" path="res://weapons/bullets/fire.png" id="2_fbwhk"]
+[ext_resource type="Texture2D" uid="uid://dxe2pniv6kdn4" path="res://weapons/bullets/fire_trail.png" id="2_q0t38"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8wb4"]
+radius = 12.53
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(145, 519)
+script = ExtResource("1_toptq")
+
+[node name="FireTrail" type="Sprite2D" parent="."]
+modulate = Color(0.902978, 0.940108, 0.178336, 1)
+position = Vector2(-33, 0)
+texture = ExtResource("2_q0t38")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fbwhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m8wb4")
