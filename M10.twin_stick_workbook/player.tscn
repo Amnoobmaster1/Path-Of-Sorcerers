@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0jt4bhdtc7hc"]
+
+[ext_resource type="Script" path="res://s.gd" id="1_vcnsd"]
+[ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="2_mngj4"]
+[ext_resource type="Texture2D" uid="uid://bnuxefkl10pkv" path="res://common/shadow_circle.png" id="2_pgrrf"]
+[ext_resource type="Script" path="res://player_sprite.gd" id="4_q22dg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ho3iv"]
+radius = 22.0907
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_vcnsd")
+
+[node name="ShadowCircle" type="Sprite2D" parent="."]
+self_modulate = Color(0.192977, 0.423717, 0.380677, 0.254902)
+position = Vector2(0, 58)
+texture = ExtResource("2_pgrrf")
+
+[node name="PlayerSpig" type="Sprite2D" parent="."]
+texture = ExtResource("2_mngj4")
+script = ExtResource("4_q22dg")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSpig"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 38)
+shape = SubResource("CircleShape2D_ho3iv")
