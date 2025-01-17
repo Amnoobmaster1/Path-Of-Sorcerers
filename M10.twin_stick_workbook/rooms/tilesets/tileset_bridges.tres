@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3fl3stluv0gn"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://crkgfdw1y80hc"]
 
-[ext_resource type="Texture2D" uid="uid://51k2u7iwra8e" path="res://rooms/tilesets/tileset_bridges.png" id="1_m4n6f"]
+[ext_resource type="Texture2D" uid="uid://51k2u7iwra8e" path="res://rooms/tilesets/tileset_bridges.png" id="1_pla8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_po4yl"]
-texture = ExtResource("1_m4n6f")
+texture = ExtResource("1_pla8k")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -52,15 +52,9 @@ texture_region_size = Vector2i(128, 128)
 5:1/0/terrain = 0
 5:1/0/terrains_peering_bit/bottom_side = 0
 
-[sub_resource type="TileSet" id="TileSet_ci3ya"]
+[resource]
 tile_size = Vector2i(128, 128)
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "Bridge"
 terrain_set_0/terrain_0/color = Color(0.219608, 0.172549, 0.647059, 1)
 sources/0 = SubResource("TileSetAtlasSource_po4yl")
-
-[node name="Bridges" type="TileMapLayer"]
-y_sort_enabled = true
-use_parent_material = true
-tile_set = SubResource("TileSet_ci3ya")
-y_sort_origin = -200
