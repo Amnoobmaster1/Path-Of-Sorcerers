@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0jt4bhdtc7hc"]
+[gd_scene load_steps=10 format=3 uid="uid://d0jt4bhdtc7hc"]
 
 [ext_resource type="Script" path="res://s.gd" id="1_vcnsd"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="2_mngj4"]
@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://player_sprite.gd" id="4_q22dg"]
 [ext_resource type="PackedScene" uid="uid://bar3gjuu5b5cy" path="res://weapon.tscn" id="5_3hdhx"]
 [ext_resource type="Script" path="res://WeaponPivot.gd" id="5_anbdu"]
-[ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="6_hxio0"]
+[ext_resource type="Texture2D" uid="uid://dpbrtxph6n20v" path="res://images Background Removed.png" id="5_liuld"]
+[ext_resource type="Texture2D" uid="uid://dbpnqfvhpga5b" path="res://40cac633c115971c42be414e67343cbb.jpg" id="7_ugwuj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho3iv"]
 radius = 22.0907
@@ -23,6 +24,11 @@ texture = ExtResource("2_pgrrf")
 [node name="PlayerSpig" type="Sprite2D" parent="."]
 texture = ExtResource("2_mngj4")
 script = ExtResource("4_q22dg")
+
+[node name="ImagesBackgroundRemoved" type="Sprite2D" parent="PlayerSpig"]
+position = Vector2(0, -23.3125)
+scale = Vector2(0.445556, 0.530556)
+texture = ExtResource("5_liuld")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpig"]
 
@@ -41,12 +47,13 @@ unique_name_in_owner = true
 position = Vector2(0, -2)
 
 [node name="LEFTY" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(78, -20)
+position = Vector2(77, -22)
 rotation = -0.200201
-texture = ExtResource("6_hxio0")
+scale = Vector2(0.0759149, 0.10725)
+texture = ExtResource("7_ugwuj")
 
 [node name="RIGHTY" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(80, 27)
+position = Vector2(94.7847, 28.9301)
 rotation = 0.108695
-scale = Vector2(1, -0.919999)
-texture = ExtResource("6_hxio0")
+scale = Vector2(0.120914, -0.0550262)
+texture = ExtResource("7_ugwuj")
