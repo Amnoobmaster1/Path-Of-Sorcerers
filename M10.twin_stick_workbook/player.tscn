@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://player_sprite.gd" id="4_q22dg"]
 [ext_resource type="PackedScene" uid="uid://bar3gjuu5b5cy" path="res://weapon.tscn" id="5_3hdhx"]
 [ext_resource type="Script" path="res://WeaponPivot.gd" id="5_anbdu"]
-[ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="6_hxio0"]
+[ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="7_owfa2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho3iv"]
 radius = 22.0907
@@ -23,6 +23,10 @@ texture = ExtResource("2_pgrrf")
 [node name="PlayerSpig" type="Sprite2D" parent="."]
 texture = ExtResource("2_mngj4")
 script = ExtResource("4_q22dg")
+
+[node name="ImagesBackgroundRemoved" type="Sprite2D" parent="PlayerSpig"]
+position = Vector2(0, -23.3125)
+scale = Vector2(0.445556, 0.530556)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpig"]
 
@@ -41,12 +45,13 @@ unique_name_in_owner = true
 position = Vector2(0, -2)
 
 [node name="LEFTY" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(78, -20)
+position = Vector2(66.1454, -8.60878)
 rotation = -0.200201
-texture = ExtResource("6_hxio0")
+scale = Vector2(0.550944, 0.6294)
+texture = ExtResource("7_owfa2")
 
 [node name="RIGHTY" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(80, 27)
+position = Vector2(71, 26)
 rotation = 0.108695
-scale = Vector2(1, -0.919999)
-texture = ExtResource("6_hxio0")
+scale = Vector2(0.873738, -0.47412)
+texture = ExtResource("7_owfa2")

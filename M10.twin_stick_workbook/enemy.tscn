@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://df3shvnq07r6x"]
+
+[ext_resource type="Texture2D" uid="uid://bnuxefkl10pkv" path="res://common/shadow_circle.png" id="1_fhxaf"]
+[ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_mf8i0"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_njtyb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lax85"]
+radius = 472.001
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_teh0d"]
+radius = 28.0
+height = 138.0
+
+[node name="ENEMY" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_njtyb")
+
+[node name="ShadowCircle" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 0.321569)
+position = Vector2(1, 47)
+rotation = -3.16448
+scale = Vector2(1, 0.391349)
+texture = ExtResource("1_fhxaf")
+
+[node name="SwordInactive" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_mf8i0")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="DetectionArea"]
+unique_name_in_owner = true
+modulate = Color(0.00392157, 1, 0, 1)
+shape = SubResource("CircleShape2D_lax85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.56973
+shape = SubResource("CapsuleShape2D_teh0d")

@@ -1,17 +1,13 @@
 extends Node2D
 
-
 var is_using_gamepad := false
-
 @onready var _weapon_anchor: Marker2D = %WeaponAnchor
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion or event is InputEventKey:
 		is_using_gamepad = false
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		is_using_gamepad = true
-
 
 func _process(_delta: float) -> void:
 	var aim_direction := Vector2.ZERO

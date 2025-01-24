@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=4 uid="uid://cu2rb5dl4ljte"]
+[gd_scene load_steps=7 format=4 uid="uid://cu2rb5dl4ljte"]
 
 [ext_resource type="Script" path="res://rooms/room.gd" id="1_8d3jl"]
 [ext_resource type="TileSet" uid="uid://bq65uwha45com" path="res://rooms/tilesets/floating_dungeon_tileset.tres" id="1_hbbvy"]
 [ext_resource type="TileSet" uid="uid://cqb2wtrubw0n6" path="res://rooms/tilesets/tileset_invisible_walls.tres" id="2_w4mpx"]
 [ext_resource type="PackedScene" uid="uid://ke0kmcp0efiv" path="res://rooms/tilemap_layer_walls.tscn" id="3_sgyoc"]
 [ext_resource type="PackedScene" uid="uid://d0jt4bhdtc7hc" path="res://player.tscn" id="5_toycl"]
+[ext_resource type="PackedScene" uid="uid://df3shvnq07r6x" path="res://enemy.tscn" id="6_8ge17"]
 
 [node name="RoomA" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(0, -1)
 rotation = -0.00114604
 script = ExtResource("1_8d3jl")
 
@@ -36,3 +38,6 @@ tile_set = ExtResource("2_w4mpx")
 
 [node name="Player" parent="." instance=ExtResource("5_toycl")]
 position = Vector2(895.241, 663.026)
+
+[node name="ENEMY" parent="." instance=ExtResource("6_8ge17")]
+position = Vector2(609.659, 297.699)
