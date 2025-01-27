@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://cqb2wtrubw0n6" path="res://rooms/tilesets/tileset_invisible_walls.tres" id="2_w4mpx"]
 [ext_resource type="PackedScene" uid="uid://ke0kmcp0efiv" path="res://rooms/tilemap_layer_walls.tscn" id="3_sgyoc"]
 [ext_resource type="PackedScene" uid="uid://d0jt4bhdtc7hc" path="res://player.tscn" id="5_toycl"]
-[ext_resource type="PackedScene" uid="uid://df3shvnq07r6x" path="res://enemy.tscn" id="6_8ge17"]
+[ext_resource type="PackedScene" uid="uid://df3shvnq07r6x" path="res://Mob.tscn" id="6_8ge17"]
 
 [node name="RoomA" type="Node2D"]
 y_sort_enabled = true
@@ -37,7 +37,7 @@ tile_map_data = PackedByteArray("AAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAA
 tile_set = ExtResource("2_w4mpx")
 
 [node name="Player" parent="." instance=ExtResource("5_toycl")]
-position = Vector2(895.241, 663.026)
+position = Vector2(1497.36, 560.716)
 
 [node name="ENEMY" parent="." instance=ExtResource("6_8ge17")]
 position = Vector2(609.659, 297.699)

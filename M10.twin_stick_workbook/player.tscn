@@ -41,17 +41,20 @@ script = ExtResource("5_anbdu")
 [node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
 
+[node name="Weapon2" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_3hdhx")]
+position = Vector2(81, 24)
+
 [node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_3hdhx")]
-position = Vector2(0, -2)
+position = Vector2(78, -9)
 
 [node name="LEFTY" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(66.1454, -8.60878)
+position = Vector2(78.5458, -8.9788)
 rotation = -0.200201
 scale = Vector2(0.550944, 0.6294)
 texture = ExtResource("7_owfa2")
 
 [node name="RIGHTY" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(71, 26)
+position = Vector2(83.4004, 25.63)
 rotation = 0.108695
 scale = Vector2(0.873738, -0.47412)
 texture = ExtResource("7_owfa2")
