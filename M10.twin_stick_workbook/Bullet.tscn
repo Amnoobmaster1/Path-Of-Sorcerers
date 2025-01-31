@@ -10,7 +10,6 @@ radius = 25.1794
 [node name="Bullet" type="Area2D"]
 position = Vector2(145, 519)
 script = ExtResource("1_toptq")
-speed = null
 
 [node name="FireTrail" type="Sprite2D" parent="."]
 modulate = Color(0.902978, 0.940108, 0.178336, 1)

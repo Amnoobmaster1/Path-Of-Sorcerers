@@ -7,11 +7,14 @@ class_name Mob extends CharacterBody2D
 
 var _player: Player = null
 
-var damage := 1
+var damage := 100
 
 @onready var detection_area: Area2D = $DetectionArea
-@onready var heloo: Area2D = $HELOO
-#@onready var damage_hitbox: CollisionShape2D = $HELOO/damage_hitbox
+@onready var take_do: Area2D = $take_do
+
+
+
+
 
 func _ready() -> void:
 	detection_area.body_entered.connect(func (body: Node) -> void:
@@ -22,10 +25,14 @@ func _ready() -> void:
 		if body is Player:
 			_player = null
 	)
-	heloo.body_entered.connect(func (body: Node) -> void:
-		if body is Player:
+	take_do.body_entered.connect(func (body: Node) -> void:
+		if body is Bullet:
 			health -= damage
 			
+	)
+	take_do.body_entered.connect(func (body: Node) -> void:
+		if body is Player:
+			body.health -= damage
 	)
 
 func set_health(new_health:int) -> void:
