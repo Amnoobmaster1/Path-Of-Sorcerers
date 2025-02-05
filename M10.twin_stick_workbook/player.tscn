@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0jt4bhdtc7hc"]
+[gd_scene load_steps=10 format=3 uid="uid://d0jt4bhdtc7hc"]
 
 [ext_resource type="Script" path="res://s.gd" id="1_vcnsd"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="2_mngj4"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ho3iv"]
 radius = 22.0907
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e54px"]
+bg_color = Color(0.226735, 0.709073, 0.32227, 1)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -58,3 +61,22 @@ position = Vector2(83.4004, 25.63)
 rotation = 0.108695
 scale = Vector2(0.873738, -0.47412)
 texture = ExtResource("7_owfa2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -204.0
+offset_top = -91.0
+offset_right = -164.0
+offset_bottom = -51.0
+
+[node name="Health_bar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 10.2
+anchor_bottom = 0.675
+offset_right = -3.05176e-05
+theme_override_styles/fill = SubResource("StyleBoxFlat_e54px")
+min_value = 1.0
+value = 100.0
+show_percentage = false

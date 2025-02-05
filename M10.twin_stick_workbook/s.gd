@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 func set_health(new_health: int) -> void:
 	var previous_health := health
 	health = clampi(new_health, 0, max_health)
+	get_node("Control/Health_bar").value = health
 	if health == 0:
 		die()
 
