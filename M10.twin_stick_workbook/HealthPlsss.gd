@@ -5,3 +5,4 @@ class_name healthHeal
 
 func use(player: Player) -> void:
 	player.health += healing_amount
+	
