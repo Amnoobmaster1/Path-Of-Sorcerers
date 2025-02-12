@@ -3,7 +3,8 @@ class_name Mob extends CharacterBody2D
 
 @export var max_speed := 344
 @export var acceleration := 1000
-@export var health := 3: set = set_health
+@export var health := 40: set = set_health
+@onready var timer: Timer = $Timer
 
 var _player: Player = null
 
@@ -28,12 +29,12 @@ func _ready() -> void:
 	take_do.body_entered.connect(func (body: Node) -> void:
 		if body is Bullet:
 			health -= damage
-			
 	)
 	take_do.body_entered.connect(func (body: Node) -> void:
 		if body is Player:
 			body.health -= damage
 	)
+
 
 func set_health(new_health:int) -> void:
 	health = new_health

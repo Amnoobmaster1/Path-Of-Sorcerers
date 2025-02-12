@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cu2rb5dl4ljte"]
+[gd_scene load_steps=18 format=4 uid="uid://cu2rb5dl4ljte"]
 
 [ext_resource type="Script" path="res://rooms/room.gd" id="1_8d3jl"]
 [ext_resource type="TileSet" uid="uid://bq65uwha45com" path="res://rooms/tilesets/floating_dungeon_tileset.tres" id="1_hbbvy"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://HealthPlsss.gd" id="8_rauj6"]
 [ext_resource type="Script" path="res://DIe.gd" id="10_526ts"]
 [ext_resource type="Texture2D" uid="uid://bafpwix362m4w" path="res://levels/props/pickups/pickup_heart_pink.png" id="11_0hqit"]
+[ext_resource type="PackedScene" uid="uid://cept2blfpd1r0" path="res://chest.tscn" id="13_bw41u"]
 
 [sub_resource type="Resource" id="Resource_j6dxi"]
 script = ExtResource("10_526ts")
@@ -43,6 +44,9 @@ y_sort_enabled = true
 position = Vector2(0, -1)
 rotation = -0.00114604
 script = ExtResource("1_8d3jl")
+
+[node name="Chest" parent="." instance=ExtResource("13_bw41u")]
+position = Vector2(794.591, 356.911)
 
 [node name="PickUp2" parent="." instance=ExtResource("7_aiid4")]
 position = Vector2(1215.36, 560.393)

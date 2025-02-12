@@ -44,3 +44,7 @@ shape = SubResource("CapsuleShape2D_teh0d")
 
 [node name="hp_damageHitbox" type="CollisionShape2D" parent="take_do"]
 shape = SubResource("CircleShape2D_iih0t")
+
+[node name="Timer" type="Timer" parent="take_do"]
+unique_name_in_owner = true
+wait_time = 0.164

@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://cept2blfpd1r0"]
+
+[ext_resource type="Texture2D" uid="uid://dub7cda3qxho2" path="res://levels/props/pickups/chest/chest_bottom.png" id="1_e3dv4"]
+[ext_resource type="Script" path="res://chest.gd" id="1_ia470"]
+[ext_resource type="Texture2D" uid="uid://bfj2ayjhou4bv" path="res://levels/props/pickups/chest/chest_top.png" id="2_4y27e"]
+[ext_resource type="Script" path="res://item.gd" id="2_xhdv1"]
+[ext_resource type="Script" path="res://HealthPlsss.gd" id="3_8keqh"]
+[ext_resource type="Texture2D" uid="uid://be8lmb157qflx" path="res://levels/props/pickups/pickup_health.png" id="4_ycvem"]
+
+[sub_resource type="Resource" id="Resource_c3mhp"]
+script = ExtResource("3_8keqh")
+healing_amount = 75
+display_name = ""
+texture = ExtResource("4_ycvem")
+
+[sub_resource type="Animation" id="Animation_sy4iq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(86, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_ecbph"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.2, 0.233333, 0.3, 0.433333, 0.6, 0.766667, 1.1, 1.33333, 1.63333, 1.9, 2.43333, 2.96667, 3.46667, 3.86667, 4.33333, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(87.75, 106), Vector2(92, 103), Vector2(96, 100), Vector2(109, 96), Vector2(139, 90), Vector2(170, 209), Vector2(165, 88), Vector2(-83, 97), Vector2(27, 230), Vector2(222, 213), Vector2(152, 158), Vector2(180.746, 127.898), Vector2(9.99998, 175), Vector2(269, 215), Vector2(258, 47), Vector2(-39, 195), Vector2(183, 136), Vector2(88, 107)]
+}
+
+[sub_resource type="Animation" id="Animation_8rqm4"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333, 1, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(86, 104), Vector2(101, 98), Vector2(124, 98), Vector2(150, 100), Vector2(175, 115), Vector2(189, 122)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k86gh"]
+_data = {
+"RESET": SubResource("Animation_sy4iq"),
+"new_animation": SubResource("Animation_ecbph"),
+"open": SubResource("Animation_8rqm4")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8fpy"]
+radius = 72.3671
+
+[node name="Chest" type="Area2D"]
+position = Vector2(47, 34)
+script = ExtResource("1_ia470")
+possible_items = Array[ExtResource("2_xhdv1")]([SubResource("Resource_c3mhp")])
+
+[node name="ChestBottom" type="Sprite2D" parent="."]
+position = Vector2(88, 105)
+texture = ExtResource("1_e3dv4")
+
+[node name="ChestTop" type="Sprite2D" parent="."]
+position = Vector2(86, 104)
+scale = Vector2(0.931579, 0.823034)
+texture = ExtResource("2_4y27e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k86gh")
+}
+
+[node name="afire" type="CollisionShape2D" parent="."]
+position = Vector2(86, 115)
+shape = SubResource("CircleShape2D_v8fpy")
